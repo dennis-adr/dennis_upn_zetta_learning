@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cssday1-project2</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid;
+        }
+        th[scope="hobby"]{background-color: green;}
+        td[scope="movies"]{background-color: red;}
+        td[scope="song"]{background-color: blue;}
+    </style>
+</head>
+
+<body>
+    <table id="hobby">
+        <tr>
+            <th scope="hobby">Hobby</th>
+        </tr>
+        <tr>
+            <td>Swimming</td>
+        </tr>
+        <tr>
+            <td>Watching Anime</td>
+        </tr>
+        <tr>
+            <td>Singing</td>
+        </tr>
+        <tr>
+            <td>Playing Games</td>
+        </tr>
+    </table><br>
+    <table id="movies">
+        <tr>
+            <th>Favorite Movies</th>
+        </tr>
+        <tr>
+            <td scope="movies">Interstellar</td>
+        </tr>
+        <tr>
+            <td>Your Name</td>
+        </tr>
+        <tr>
+            <td>Star Trek</td>
+        </tr>
+        <tr>
+            <td>Her</td>
+        </tr>
+    </table><br>
+    <table id="Song">
+        <tr>
+            <th>Favorite Song</th>
+        </tr>
+        <tr>
+            <td>Ai Uta</td>
+        </tr>
+        <tr>
+            <td scope="song">Kimi no Shiranai Monogatari</td>
+        </tr>
+        <tr>
+            <td>Enchanted</td>
+        </tr>
+        <tr>
+            <td>First Rabbit</td>
+        </tr>
+    </table>
+    
+</body>
+
+</html>
