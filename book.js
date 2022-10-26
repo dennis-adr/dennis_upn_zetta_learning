@@ -1,6 +1,8 @@
 /*jshint esversion: 6 */
-function bookPurchasing(book, discountPercentage, taxPercentage, stock, purchase) {
+function bookPurchasing(book, discountPercentage, taxPercentage, stock, purchase, credit) {
     let result = 0;
+    let outputcicilan = [];
+    let index = 0;
     for (let i = 0; i < purchase; i++) {
         if (purchase < stock) {
             const discount = book.price * (discountPercentage / 100);
@@ -37,12 +39,28 @@ function bookPurchasing(book, discountPercentage, taxPercentage, stock, purchase
         } else {
             console.log("Sorry, You can't buy again");
         }
-        console.log('');
         console.groupEnd();
+        let cicilanperbulan = result / credit;
+        let sisaresult = result;
+        console.log('Credit for', credit, 'times,', credit / 12, 'year(s). ', cicilanperbulan, 'per month');
+        while (index < credit) {
+            sisaresult = sisaresult - cicilanperbulan;
+            outputcicilan.push({
+                creditonmonth: index + 1,
+                amount: cicilanperbulan,
+                creditleft: sisaresult,
+            });
+            index++;
+        }
+        console.group();
+        console.log(Array.from(outputcicilan));
+        console.groupEnd();
+        console.log('');
     }
-    return result;
 
+
+    return result;
 }
-bookPurchasing({ title: 'Dennis Biography', price: 10000 }, 10, 10, 100, 10);
-bookPurchasing({ title: 'cant let it has more', price: 10000 }, 10, 10, 11, 10);
-bookPurchasing({ title: 'Think Simple', price: 10000 }, 10, 10, 100, 101);
+bookPurchasing({ title: 'Dennis Biography', price: 10000 }, 10, 10, 100, 10, 24);
+bookPurchasing({ title: 'cant let it has more', price: 10000 }, 10, 10, 11, 10, 12);
+bookPurchasing({ title: 'Think Simple', price: 10000 }, 10, 10, 100, 101, 3);
