@@ -1,0 +1,3 @@
+array digunakan untuk menyimpan kumpulan data yang tipenya sama
+tuple digunakan untuk menyimpan kumpulan data yang tidak bisa diubah
+objek digunakan untuk menyimpan data yang terdiri dari berbagai jenis tipe.
